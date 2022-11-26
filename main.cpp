@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <string>
+#include <cstring>
 
 const std::string HTML_PAGE =
         "<!DOCTYPE html>\n"
@@ -68,7 +69,8 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    sockaddr_in addr = {0};
+    sockaddr_in addr;
+    memset(&addr, 0, sizeof(addr));
     addr.sin_family = AF_INET;
     addr.sin_port = htons(PORT);
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);

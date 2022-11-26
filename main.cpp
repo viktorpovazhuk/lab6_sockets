@@ -36,6 +36,7 @@ const std::string PAYLOAD =
         "\n"
         + HTML_PAGE;
 
+const int PORT = 1337;
 
 /**
  * Write buffer to file descriptor
@@ -69,7 +70,7 @@ int main(int argc, char* argv[]) {
 
     sockaddr_in addr = {0};
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(1337);
+    addr.sin_port = htons(PORT);
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
 
     if (bind(tcp_socket, reinterpret_cast<sockaddr *>(&addr), sizeof(sockaddr_in)) == -1) {

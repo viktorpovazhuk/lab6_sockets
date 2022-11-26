@@ -1,44 +1,54 @@
-<mark>Template for your README. Remove all unused parts and instructions</mark>
-
-# Lab work <mark>NUMBER</mark>: <mark>SHORT TOPIC</mark>
-Authors (team): <mark>AUTHORS WITH GITHUB LINKS</mark><br>
-Variant: <mark>VARIANT SHOULD BE HERE</mark>
+# Lab work 6: Simple HTTP server
+Authors (team): <a href="https://github.com/bogdanmagometa">Bohdan Mahometa</a>,
+<a href="https://github.com/viktorpovazhuk">Viktor Povazhuk</a><br>
 ## Prerequisites
 
-<mark>LIST LIBRARIES/TOOLS/OTHER UTILITIES THAT NEED TO BE INSTALLED (E.G. GCC, OPENMP, CMAKE ETC)</mark>
+Tools:
+- cmake, GCC
 
 ### Compilation
 
-<mark>HOW TO COMPILE YOUR PROGRAM? (RECOMMENDED: ./comile.sh)</mark>
+
+#### Compile with `./compile.sh`
+
+Execute the following command in the project root directory:
+```bash
+$ ./compile.sh
+```
+
+The executable will be built and copied to `./bin/http_server`.
+
+#### Compile manually with cmake
+
+Run the following in the project root directory:
+```bash
+$ mkdir build
+$ cmake -S . -B build
+$ cmake --build build
+```
+
+The executable will be available by the path `./build/http_server`.
 
 ### Installation
 
-<mark>DESCRIBE THE INSTALLATION PROCESS (USE ./dependencies FOLDER)</mark>
-
-<mark>Note: For Python scripts, You must add `requirenments.txt` 
-file and add your env to the `.gitignore` file!</mark>
+Just move the executable wherever you want.
 
 ### Usage
 
-<mark>PROVIDE AN EXAMPLE OF HOW TO RUN YOUR PROGRAM (IT CAN BE A_flag COMMAND LINE WITH INPUT AND EXPECTED OUTPUT)</mark>
+Assuming the `http_server` executable is available by the path `./bin/http_server`:
+```bash
+$ ./bin/http_server &
+$ firefox localhost:1337
+```
 
-<mark>Note: if your project needs or generates any data, media and so on -- put them
-into the data folder</mark> 
+You will see the html page displayed.
 
 ### Important!
 
-<mark>WHAT ELSE SHOULD WE KNOW ABOUT YOUR WORK? (E.G. KNOWN ISSUES, BUGS, SPECIAL BEHAVIOR ETC)</mark>
-
 ### Results
 
-<mark>DESCRIBE THE RESULTS OF THE WORK YOU DID. WHAT DID YOU LEARN OR FIND INTERESTING?</mark>
+We implemented simple HTTP server.
 
 # Additional tasks
-<mark>IF APPLICABLE, LIST ALL THE EXTRA FEATURES YOU ADDED. PROVIDE DETAILS<mark>
 
-# ATTENTION!
-  
-Additional tasks not listed in the previous paragraph would not be graded.
-
-Be sure to provide a complete list of authors.
-
+The server returns arbitrary HTML bage.
